@@ -1,4 +1,5 @@
 import React from 'react'
+import { RaisedButton, FlatButton } from 'material-ui'
 import classes from './Counter.scss'
 
 export const Counter = (props) => (
@@ -10,13 +11,8 @@ export const Counter = (props) => (
         {props.counter}
       </span>
     </h2>
-    <button className='btn btn-default' onClick={props.increment}>
-      Increment
-    </button>
-    {' '}
-    <button className='btn btn-default' onClick={props.doubleAsync}>
-      Double (Async)
-    </button>
+    <FlatButton label='increment' onTouchTap={props.increment} />
+    <RaisedButton label='double value (async)' onTouchTap={props.doubleAsync} />
   </div>
 )
 
