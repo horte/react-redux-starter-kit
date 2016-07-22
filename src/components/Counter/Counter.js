@@ -3,10 +3,10 @@ import Radium from 'radium'
 import classes from './Counter.scss'
 
 const styles = {
-  button: {
-    background: 'red',
+  counter: {
+    color: 'red',
     ':hover': {
-      background: 'blue'
+      color: 'blue'
     }
   }
 }
@@ -16,7 +16,7 @@ export const Counter = (props) => (
     <h2 className={classes.counterContainer}>
       Counter:
       {' '}
-      <span className={classes['counter--green']}>
+      <span style={styles.counter}>
         {props.counter}
       </span>
     </h2>
