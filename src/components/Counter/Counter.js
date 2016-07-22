@@ -1,5 +1,15 @@
 import React from 'react'
+import Radium from 'radium'
 import classes from './Counter.scss'
+
+const styles = {
+  button: {
+    background: 'red',
+    ':hover': {
+      background: 'blue'
+    }
+  }
+}
 
 export const Counter = (props) => (
   <div>
@@ -10,7 +20,7 @@ export const Counter = (props) => (
         {props.counter}
       </span>
     </h2>
-    <button className='btn btn-default' onClick={props.increment}>
+    <button style={styles.button} className='btn btn-default' onClick={props.increment}>
       Increment
     </button>
     {' '}
@@ -26,4 +36,4 @@ Counter.propTypes = {
   increment: React.PropTypes.func.isRequired
 }
 
-export default Counter
+export default Radium(Counter)
